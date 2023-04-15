@@ -1,63 +1,43 @@
 `use strict`;
-console.log("Hello world");
+
+// import functions here
+import { diceRoll } from "./dice.js";
 
 // add event listener for button roll
 let player_roll = 0;
-let computer_roll = 0;
+let text_roll = "";
 
 const player_dice = document.getElementById("playerdice");
 const computer_dice = document.getElementById("compdice");
-let player_text = "";
-let computer_text = "";
 
 document.querySelector("#player_dice").addEventListener("click", function () {
 	// choose dice based on mod (0,1,2,0,1,2 etc etc)
-	console.log(player_roll);
+	// console.log(player_roll);
 	const dice_num = player_roll % 3;
 
 	switch (dice_num) {
 		case 0:
-			player_text = "d8 rolled for player";
+			text_roll = "d8 rolled";
+			console.log(diceRoll(8));
 
 			break;
 		case 1:
-			player_text = "d6 rolled for player";
+			text_roll = "d6 rolled";
+			console.log(diceRoll(6));
 
 			break;
 		case 2:
-			player_text = "d4 rolled for player";
+			text_roll = "d4 rolled";
+			console.log(diceRoll(4));
 
 			break;
 	}
 
 	// display current dice rolled and change text
-	console.log(player_text);
-	player_dice.innerHTML = player_text;
+	// console.log(text_roll);
+	player_dice.innerHTML = text_roll;
+	computer_dice.innerHTML = text_roll;
 
 	// increment dice roll by 1
 	player_roll++;
-});
-
-// TODO 10/4/23: you can probably combine these two functions as one, but that's a later issue
-document.querySelector("#computer_dice").addEventListener("click", function () {
-	// choose dice based on mod (0,1,2,0,1,2 etc etc)
-	console.log(computer_roll);
-	const dice_num = computer_roll % 3;
-	switch (dice_num) {
-		case 0:
-			computer_text = "d8 rolled for computer";
-			break;
-		case 1:
-			computer_text = "d6 rolled for computer";
-			break;
-		case 2:
-			computer_text = "d4 rolled for computer";
-			break;
-	}
-
-	console.log(computer_text);
-	computer_dice.innerHTML = computer_text;
-
-	// increment dice roll by 1
-	computer_roll++;
 });
