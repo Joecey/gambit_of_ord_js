@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Gambit of Ord JS</title>
+		<link rel="stylesheet" href="./css/styles.css" />
 	</head>
 	<body>
 		<div>
@@ -12,17 +13,19 @@
 			<button id="player_dice">
 				<h1>roll player dice</h1>
 			</button>
-			<p>Player total: <span>0</span></p>
+
+			<button id="button_state">
+				<h1>current game state: <span id="game_state">false</span></h1>
+			</button>
+			<p>Player total: <span id="player_total">0</span></p>
 			<p>Player current dice: <span id="playerdice">0</span></p>
 			<p>Player d8: <span id="playd8">0</span></p>
 			<p>Player d6: <span id="playd6">0</span></p>
 			<p>Player d4: <span id="playd4">0</span></p>
 
-			<p>Computer total: <span>0</span></p>
+			<p>Computer total: <span id="comp_total">0</span></p>
 			<p>Computer current dice: <span id="compdice">0</span></p>
-			<p>Computer d8: <span id="comd8">0</span></p>
-			<p>Computer d6: <span id="comd6">0</span></p>
-			<p>Computer d4: <span id="comd4">0</span></p>
+			<p>Result: <span id="result">N/A</span></p>
 		</div>
 	</body>
 
